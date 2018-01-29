@@ -1,0 +1,49 @@
+.well#api-connection-box
+  span API Key
+  span 
+    input.form-control#api-key value=session[:api_key]
+  br
+  span API Secret
+  span
+    input.form-control#api-secret value=session[:api_secret]
+  br
+  btn.btn-lg.btn-success#btn-connect Connect to Binance
+
+.well#active-orders-box.hidden
+  h4 Active Orders
+  .row.orders-container
+
+.container
+  .row
+    .col-xs-12
+      br
+      select.form-control.hidden#trading-pair-select
+        option value='' select trading pair
+    .col-xs-12.pair-data.hidden
+      h3
+        span Pair: 
+        span#symbol
+      h3
+        span Price: 
+        span#price
+      h3
+        span Balance: 
+        span#balance
+      p -----
+      button.btn.btn-info#create-limit-order data-symbol='' href='#' Create Stop Limit Order
+  
+  br
+  
+  .well#create-order-box.hidden
+    span stop
+    span
+      input.form-control#stop-val
+    br
+    span limit
+    span
+      input.form-control#limit
+    br
+    span amount
+    span
+      input.form-control#amount
+  
