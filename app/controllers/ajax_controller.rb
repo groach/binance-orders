@@ -4,7 +4,6 @@ class AjaxController < ApplicationController
     session[:api_key] = params[:key]
     session[:api_secret] = params[:secret]
     info = GetExchangeInfo.perform(binance_client)
-
     if info[:symbols].present?
       response = info
     else

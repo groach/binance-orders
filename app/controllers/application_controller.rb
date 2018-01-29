@@ -12,7 +12,7 @@ class ApplicationController < ActionController::Base
 
   def cached_client
     Rails.cache.fetch "binance-client" do
-      Binance::Client::REST.new api_key: session[:api_key], secret_key: [:api_secret]
+      Binance::Client::REST.new api_key: session[:api_key], secret_key: session[:api_secret]
     end
   end
 end

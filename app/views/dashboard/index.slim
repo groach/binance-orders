@@ -13,37 +13,41 @@
   h4 Active Orders
   .row.orders-container
 
-.container
+.container-fluid
   .row
-    .col-xs-12
-      br
+    .col-xs-8
       select.form-control.hidden#trading-pair-select
         option value='' select trading pair
-    .col-xs-12.pair-data.hidden
-      h3
-        span Pair: 
-        span#symbol
-      h3
-        span Price: 
-        span#price
-      h3
-        span Balance: 
-        span#balance
-      p -----
-      button.btn.btn-info#create-limit-order data-symbol='' href='#' Create Stop Limit Order
+      .pair-data.hidden
+        h3
+          span Pair: 
+          span#symbol
+        h3
+          span Price: 
+          span#price
+        h3
+          span Balance: 
+          span#balance
+        p -----
+        #create-order-box
+          .row
+            .col-xs-12
+              h4 Build Order
+              span stop
+              span
+                input.form-control#stop-val
+              br
+              span limit
+              span
+                input.form-control#limit
+              br
+              span amount
+              span
+                input.form-control#amount
+              br
+              button.btn.btn-warning.btn-block#set-stop-limit-order Place Order
+    .col-xs-4#balances.hidden.well
+      h4 Balances
+      table.table#balances-table
   
-  br
-  
-  .well#create-order-box.hidden
-    span stop
-    span
-      input.form-control#stop-val
-    br
-    span limit
-    span
-      input.form-control#limit
-    br
-    span amount
-    span
-      input.form-control#amount
   
